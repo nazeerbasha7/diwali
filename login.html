@@ -40,16 +40,35 @@
 </head>
 <body>
     <div class="container">
-    <form action="diwali.html" class="">
+    <form action="diwali.html" class="" id="loginForm" >
       <h2>Login Here</h2>
-      <div class="form-field"><input type="email" name="email" placeholder="enter email" required id="">
+      <div class="form-field"><input type="email" name="email" placeholder="enter email" required id="email">
       </div>
-      <div class="form-field"><input type="password" name="password" placeholder="enter password" required id="">
+      <div class="form-field"><input type="password" name="password" placeholder="enter password" required id="password">
       </div>
-      <button class="form-btn">Submit</button>
+      <button class="form-btn">submit</button>
       <p>Don't have an account <a href="index.html">Sign-up</a> Here</p>
     </form>
     <img src="https://64.media.tumblr.com/858dcc7927c3333519f6ceb977316336/bfb2ed9afcfba9e5-c3/s500x750/daae5f504356c2284afec59b7cb5ac8c42c9929a.gifv" alt="">
     </div>
+    <script>
+        document.getElementById("loginForm").addEventListener("submit",function(e){
+            e.preventDefault()
+            var email=document.getElementById("email").value
+            var password=document.getElementById("password").value
+            var users=JSON.parse(localStorage.getItem("users"))
+            var validUser=users.find(user=>user.email===email && user.password===password)
+            if(validUser){
+                localStorage.setItem("newUser",email)
+            }
+            else{
+                alert("invalid password")
+                return
+            }
+            alert("login successful")
+            window.location.href="diwali.html"
+
+        })
+    </script>
 </body>
 </html>
