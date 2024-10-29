@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Document</title>
+    <style>
+        body{
+            min-height: 100vh;
+            background-size: cover;
+            background-image: url(https://i.pinimg.com/originals/6f/6b/36/6f6b36af5d9f5ad13ff756c50ca1686a.jpg);
+        }
+            .form-field{
+            margin: 10px;
+          }
+          .form-field input,.form-btn{
+            padding: 10px;
+            width: 30%;
+          }
+        .title{
+            color: rgb(98, 98, 235);
+        }
+        .parent-container{
+            border-radius: 15px;
+            background-color: white;
+            width: 36%;
+            padding: 2%;
+            text-align: center;
+            margin: auto;
+            margin-top: 2%;
+        }
+        @media (max-width : 430px){
+            .parent-container{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+     
+    <form class=" parent-container" action="login.html">
+        <h2 class="title">Registration</h2>
+        <div class="form-field">
+            <input type="email" name="email" placeholder="enter your email" required id="" class="">
+        </div>
+        <div class="form-field">
+            <input type="password" name="password" placeholder="enter password" required id="">
+        </div>
+        <div class="form-field">
+            <input type="password" name="password" placeholder="confirm password" required id="">
+        </div>
+        <div class="form-field">
+            <input type="number" name="number" placeholder="enter mobile" required id="">
+        </div>
+        <button class="form-btn">Submit</button>
+        <p>Already have an account
+            <a href="login.html">Login</a>
+        </p>
+    </form>
+</body>
+</html>
